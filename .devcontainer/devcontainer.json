@@ -1,0 +1,15 @@
+{
+    "name": "Telegram MegaBot",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "bot",
+    "workspaceFolder": "/workspace",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+    ],
+    "forwardPorts": [8000, 5432],
+    "postCreateCommand": "pip install -r requirements.txt && python -m core.database init_db"
+}
